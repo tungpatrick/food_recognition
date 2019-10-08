@@ -18,7 +18,7 @@ MODEL_PATH = os.path.join("models", "my_model.h5")
 
 # Load your trained model
 model = load_model(MODEL_PATH)
-print("Model loaded. Check http://127.0.0.1:5000/"")
+print("Model loaded. Check http://127.0.0.1:5000/")
 
 with open(os.path.join("..","food_list", "jap_translate.json"), "r", encoding="utf8") as f:
     food_labels = json.load(f)
