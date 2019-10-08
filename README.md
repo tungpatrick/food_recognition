@@ -1,11 +1,12 @@
 # Food Recognition Web App
 #### A web app that takes in users input of a food image and outputs a classification of the image.
 
-![](https://live.staticflickr.com/3072/2858505395_e0f05b3658_b.jpg)
 
 ## Background
 
 As an avid "eater" (or foodie), I've always loved to travel to different cities and countries and explore different types of cuisines. Eating is by far one of the most exciting things I have done, other than studying data science, so I wanted to combine the two together. This is an ongoing project that I am still working on. At the current stage, I have only trained the model on 105 different Japanese food dishes, which can be found in this [file](food_list/jap_translate.json). I am not Japanese, nor am I an expert at Japanese food. However, it is one of my favorite type of cuisines, which is why I chose this as my starting point. My hope is that users can use the web app easily by uploading an image of a dish and getting an accurate feedback of what the food is (in English). At the moment, it only provides the classification label, but I have plans of providing other details like nutritional facts in the future. I also plan on creating other models with other cuisines so that the web app can serve different types of cuisines.
+
+![](https://live.staticflickr.com/3072/2858505395_e0f05b3658_b.jpg)
 
 ## Run the web app
 
