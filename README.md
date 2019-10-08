@@ -7,7 +7,7 @@ As an avid "eater" (or foodie), I've always loved to travel to different cities 
 
 ## Run the web app
 
-There is a version of the web app currently running [here](3.85.101.142).
+There is a version of the web app currently running [here](http://3.85.101.142).
 
 If you want to run it locally (perhaps with your own model), you can run the following code from the root folder:
 ```
