@@ -1,7 +1,7 @@
 # Food Recognition Web App
 #### A web app that takes in users input of a food image and outputs a classification of the image.
 
-![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2Fnihonbunka%2F2858505395&psig=AOvVaw1X9S5q3orIuw5e0EhL66mV&ust=1570596777712000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDan4vvi-UCFQAAAAAdAAAAABAE)
+![](https://live.staticflickr.com/3072/2858505395_e0f05b3658_b.jpg)
 
 ## Background
 
