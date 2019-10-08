@@ -47,8 +47,14 @@ images
 
 ```
 
-After setting up my folder structure, I ran the [script](scripts/collect_jap_images.py) to download more than 500 models for each food item in my list. To get better quality images, I manually created a translated document in the `food_list` folder so that my search results could be in Japanese. To then split my data into train, valid, and test portions, I created a [script](scripts/setup_image_folder_structure.py) to setup the `images` folder in preparation for my model.
+After setting up my folder structure, I ran the [script](scripts/collect_jap_images.py) to download more than 500 images for each food item in my list. To get better quality images, I manually created a translated document in the `food_list` folder so that my search results could be in Japanese. To then split my data into train, valid, and test portions, I created a [script](scripts/setup_image_folder_structure.py) to setup the `images` folder in preparation for my model.
 
 ### Step 2: Building and Training the Model
 
-Once I have collected all the data, I built my model. This step could be found in my Jupyter [notebook](notebooks/Japanese Food Classification.ipynb)
+Once I have collected all the data, I built my model. This step could be found in my Jupyter [notebook](notebooks/Japanese Food Classification.ipynb). Because of the way I split my data, I only had around 300+ images per class for training, which isn't a whole lot. To mitigate this problem, I used Keras's ImageDataGenerator for image augmentation. This allowed me to augment the data on the fly and get better training results.
+
+I attempted several models include a base ConvNet model and other transfer learning models. For now, the best model I came down to is to use VGG16 transfer learning as a feature extraction. I fit my model with a RMSProp(lr=0.0002) optimizer first, and then fine-tuned it with a slower SGD optimizer. (Note: I am still working on getting better accuracies).
+
+### Step 3: Inference
+
+With my current best model, I created a flask web application in the `web_app` folder that could be run with the code shown above. If you have another model that you'd like to test out, you can move your model into the `models` folder inside `web_app` and run it there.
