@@ -18,6 +18,11 @@ cd web_app
 python app.py
 ```
 
+![]()
+
+### Example
+![](https://media.giphy.com/media/KFPUtHhvt8o55PGleX/giphy.gif)
+
 ## My Process
 
 ### Step 1: Data Collection
