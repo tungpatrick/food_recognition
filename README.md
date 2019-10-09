@@ -15,6 +15,7 @@ There is a version of the web app currently running [here](http://3.85.101.142).
 If you want to run it locally (perhaps with your own model), you can run the following code from the root folder:
 ```
 cd web_app
+pip install -r requirements.txt # to install necessary packages
 python app.py
 ```
 
@@ -61,8 +62,8 @@ After setting up my folder structure, I ran the [script](scripts/collect_jap_ima
 
 Once I have collected all the data, I built my model. This step could be found in my Jupyter [notebook](notebooks/Japanese Food Classification.ipynb). Because of the way I split my data, I only had around 300+ images per class for training, which isn't a whole lot. To mitigate this problem, I used Keras's ImageDataGenerator for image augmentation. This allowed me to augment the data on the fly and get better training results.
 
-I attempted several models include a base ConvNet model and other transfer learning models. For now, the best model I came down to is to use VGG16 transfer learning as a feature extraction. I fit my model with a RMSProp(lr=0.0002) optimizer first, and then fine-tuned it with a slower SGD optimizer. (Note: I am still working on getting better accuracies).
+I attempted several models include a base ConvNet model and other transfer learning models. For now, the best model I came down to is to use MobileNet transfer learning as a feature extraction. I fit my model with a RMSProp(lr=0.0002) optimizer first, and then fine-tuned it with a lower learning rate. (Note: I am still working on getting better accuracies).
 
 ### Step 3: Inference
 
-With my current best model, I created a flask web application in the `web_app` folder that could be run with the code shown above. If you have another model that you'd like to test out, you can move your model into the `models` folder inside `web_app` and run it there.
+With my current best model, I created a flask web application in the `web_app` folder that could be run with the code shown above. If you have another model that you'd like to test out, you can move your best model into the `models` folder inside `web_app` and run it there.
