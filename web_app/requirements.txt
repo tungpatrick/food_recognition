@@ -3,5 +3,5 @@ tensorflow==1.14.0
 pandas==0.24.2
 numpy==1.16.2
 gevent==1.4.0
-werkzeug==0.14.1
+werkzeug==0.15.3
 PIL==5.4.1
