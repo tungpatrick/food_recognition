@@ -14,7 +14,7 @@ from gevent.pywsgi import WSGIServer
 app = Flask(__name__)
 
 # Model saved with Keras model.save()
-MODEL_PATH = os.path.join("models", "my_model.h5")
+MODEL_PATH = os.path.join("models", "my_model_v2.h5")
 
 # Load your trained model
 model = load_model(MODEL_PATH)
@@ -28,7 +28,7 @@ label_dict = dict(zip(range(len(class_names)), class_names))
 def prepare_image(img_path):
     img = image.load_img(img_path, target_size=(200, 200))
     # Preprocessing the image
-    x = image.img_to_array(img)
+    x = image.img_to_array(img) / 255
     x = np.expand_dims(x, axis=0)
     return x
 
