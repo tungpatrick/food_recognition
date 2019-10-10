@@ -4,13 +4,13 @@
 
 ## Background
 
-As an avid "eater" (or foodie), I've always loved to travel to different cities and countries and explore different types of cuisines. Eating is by far one of the most exciting things I have done, other than studying data science, so I wanted to combine the two together. This is an ongoing project that I am still working on. At the current stage, I have only trained the model on 105 different Japanese food dishes, which can be found in this [file](food_list/jap_translate.json). I am not Japanese, nor am I an expert at Japanese food. However, it is one of my favorite type of cuisines, which is why I chose this as my starting point. My hope is that users can use the web app easily by uploading an image of a dish and getting an accurate feedback of what the food is (in English). At the moment, it only provides the classification label, but I have plans of providing other details like nutritional facts in the future. I also plan on creating other models with other cuisines so that the web app can serve different types of cuisines.
+As an avid "eater" (or foodie), I've always loved to travel to different cities and countries and explore different types of cuisines. Eating is by far one of the most exciting things I have done, other than studying data science, so I wanted to combine the two together. This is an ongoing project that I am still working on. At the current stage, I have only trained the model on 105 different Japanese food dishes, which can be found in this [file](food_list/jap_list.csv). I am not Japanese, nor am I an expert at Japanese food. However, it is one of my favorite type of cuisines, which is why I chose this as my starting point. My hope is that users can use the web app easily by uploading an image of a dish and getting an accurate feedback of what the food is (in English). At the moment, it only provides the classification label, but I have plans of providing other details like nutritional facts in the future. I also plan on creating other models with other cuisines so that the web app can serve different types of cuisines.
 
 ![](https://live.staticflickr.com/3072/2858505395_e0f05b3658_b.jpg)
 
-## Run the web app
+## Run the Web App
 
-There is a version of the web app currently running [here](http://3.85.101.142).
+If you just want to test it out, there is a version of the web app currently running [here](http://3.85.101.142).
 
 If you want to run it locally (perhaps with your own model), you can run the following code from the root folder:
 ```
@@ -19,8 +19,6 @@ pip install -r requirements.txt # to install necessary packages
 python app.py
 ```
 
-![]()
-
 ### Example
 ![](https://media.giphy.com/media/KFPUtHhvt8o55PGleX/giphy.gif)
 
@@ -28,7 +26,7 @@ python app.py
 
 ### Step 1: Data Collection
 
-The first step for this project is to collect and clean the data. To start, I needed to know what types of Japanese food there were, so I went on a site that had 105 popular Japanese dishes and scraped all the names of the dishes there. The script can be found [here](scripts/create_jap_list.py). Running this script would create a .csv file of a list of 105 Japanese foods. Yes, I do understand that there are definitely more than 105 unique Japanese dishes, but I had to start somewhere. Because I will be using an ImageGenerator from Keras so that I could use the `.flow_from_directory()` method to augment my images, I needed my `images` folder structure to look like this:
+The first step for this project is to collect and clean the data. To start, I needed to know what types of Japanese food there were, so I went on a site that had 105 popular Japanese dishes and scraped all the names of the dishes there. The script can be found [here](scripts/create_jap_list.py). Running this script would create a [.csv file](food_list/jap_list.csv) of a diverse list of 105 Japanese dishes. This list was scraped from a website that listed popular Japanese dishes. Yes, I do understand that there are definitely more than 105 unique Japanese dishes, but I had to start somewhere. Because I will be using an ImageGenerator from Keras so that I could use the `.flow_from_directory()` method to augment my images, I needed my `images` folder structure to look like this:
 ```
 images
 ├── train
@@ -67,3 +65,11 @@ I attempted several models include a base ConvNet model and other transfer learn
 ### Step 3: Inference
 
 With my current best model, I created a flask web application in the `web_app` folder that could be run with the code shown above. If you have another model that you'd like to test out, you can move your best model into the `models` folder inside `web_app` and run it there.
+
+
+## Future Plans
+
+- Clean current data (remove unwanted images)
+    - Unfortunately, as the images were scraped off from a search engine, not all the images were of good quality. Some images were just the storefront that sold the dish, some were advertisements, and some were even plastic packagings of the food.
+- Get more data (images) for the current classes
+- Train a model for another cuisine
